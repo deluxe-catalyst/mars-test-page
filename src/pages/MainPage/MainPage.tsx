@@ -1,5 +1,4 @@
 import Button from '../../components/Button/Button';
-import Header from '../../components/Header/Header';
 import { button, titles } from '../../content/MainPageContent';
 import classes from './MainPage.module.scss';
 
@@ -16,6 +15,7 @@ export default function MainPage() {
             <Button className='hollow-button'>{button}</Button>
           </div>
         </div>
+        <TilesBlock />
       </section>
     </main>
   );
@@ -24,18 +24,25 @@ export default function MainPage() {
 const TilesBlock = () => {
   return (
     <div className={classes['section__tiles']}>
-
+      <div className={classes['tiles__row']}>
+        <Tile />
+        <Tile />
+      </div>
+      <div className={classes['tiles__row']}>
+        <Tile />
+        <Tile />
+      </div>
     </div>
+
   )
 }
 
 const Tile = () => {
   return (
-    <div className={classes['tile']}>
-      <p></p>
-      <div className=''>
-
-      </div>
+    <div className={classes['tiles__item']}>
+      <p className={classes['item__text-1']}>на</p>
+      <h1 className={classes['item__text-2']}>1</h1>
+      <p className={classes['item__text-3']}>месте</p>
     </div>
   )
 

@@ -1,11 +1,12 @@
 $header-height: 80px;
-$main-container-width: 80%;
+$main-container-width: 86%;
 $max-container-width: 20000px;
 $min-conrainer-width: 320px;
 
-$font-size-xl: clamp(40px,6vw, 64px);
-$font-size-l: clamp(20px, 4vw, 36px);
-$font-size-m:clamp(20px, 3vw, 30px);
+$font-size-xl: clamp(40px,5vw, 64px);
+$font-size-l: clamp(20px, 3vw, 36px);
+$font-size-m:clamp(20px, 2vw, 30px);
 $font-size-s: clamp(16px, 1.5vw, 20px);
 
 $bg-black-transparent: rgba(0,0,0, 0.2);
+$bg-white-transparent: rgba(255, 255, 255, 0.05);
