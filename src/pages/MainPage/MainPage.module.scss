@@ -55,6 +55,8 @@
     -webkit-text-fill-color: transparent; 
 }
 
+// ------------- Плитки (START) -------------
+
 .section__tiles{
     grid-row: 3/7;
     grid-column: 6 / 9;
@@ -62,6 +64,7 @@
     flex-direction: column;
     width: 100%;
     gap: 6px;
+    white-space: nowrap;
 }
 
 .tiles__row{
@@ -74,12 +77,25 @@
     background-color: $bg-white-transparent;
     width: 0px;
     height: 0px;
-    padding: clamp(20px, 6vw, 80px);
+    padding: clamp(20px, 8vw, 80px);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 .item__text-1{
-    margin-bottom: clamp(6px, 1vw, 20px);
+    margin-bottom: clamp(10px, 2vw, 30px);
+    font-weight: 100;
+}
+
+.item__text-3{
+    font-weight: 100;
+}
+
+.item__text-2{
+    font-size: calc($font-size-xl - 12px);
+}
+
+.text-2__span{
+    font-size: calc($font-size-xl - 40px);
 }

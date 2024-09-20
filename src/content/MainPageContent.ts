@@ -8,23 +8,23 @@ const button = 'Начать путешествие';
 const tiles = [
     {
         tileUpText: 'на',
-        largeText: '1',
+        tileLargeText: '1',
         tileDownText: 'на рынке',
     },
     {
         tileUpText: 'гарантируем',
-        largeText: '50%',
+        tileLargeText: '50%',
         tileDownText: 'безопасность',
 
     },
     {
         tileUpText: 'календарик за',
-        largeText: '2001 г.',
+        tileLargeText: '2001г.',
         tileDownText: 'в подарок',
     },
     {
         tileUpText: 'путешествие',
-        largeText: '597',
+        tileLargeText: '597',
         tileDownText: 'дней',
     }
 ]
