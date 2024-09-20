@@ -1,0 +1,9 @@
+@import '../../variables.scss';
+
+.hollow-button{
+    width: fit-content;
+    font-family: 'Museo';
+    border-radius: 0;
+    padding: 10px 20px;
+    font-size: $font-size-s;
+}

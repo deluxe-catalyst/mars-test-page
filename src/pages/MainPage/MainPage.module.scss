@@ -1,0 +1,25 @@
+@import '../../variables.scss';
+
+.container{
+    background-image: url('../../assets//images/background.png');
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+}
+
+.container__section{
+    width: $main-container-width;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.section__wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 400px;
+}
+
+.text__title{
+}
