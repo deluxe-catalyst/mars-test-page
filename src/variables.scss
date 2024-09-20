@@ -1,9 +1,11 @@
 $header-height: 80px;
 $main-container-width: 80%;
-$max-container-width: 1400px;
+$max-container-width: 20000px;
 $min-conrainer-width: 320px;
 
-$font-size-xl: clamp(40px, 12vw, 64px);
-$font-size-l: clamp(26px, 2vw, 40px);
-$font-size-m:clamp(24px, 3vw, 32px);
+$font-size-xl: clamp(40px,6vw, 64px);
+$font-size-l: clamp(20px, 4vw, 36px);
+$font-size-m:clamp(20px, 3vw, 30px);
 $font-size-s: clamp(16px, 1.5vw, 20px);
+
+$bg-black-transparent: rgba(0,0,0, 0.2);

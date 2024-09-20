@@ -12,18 +12,31 @@ export default function MainPage() {
             <h1 className={classes['text__title']}>{titles.title}</h1>
             <h2 className={classes['text__description']}>{titles.description}</h2>
           </div>
-          <Button className='hollow-button'>{button}</Button>
+          <div className={classes['section__button']}>
+            <Button className='hollow-button'>{button}</Button>
+          </div>
         </div>
       </section>
     </main>
   );
 };
 
-const tilesBlock = () => {
+const TilesBlock = () => {
   return (
     <div className={classes['section__tiles']}>
-      <h1></h1>
-      <h2></h2>
+
     </div>
   )
+}
+
+const Tile = () => {
+  return (
+    <div className={classes['tile']}>
+      <p></p>
+      <div className=''>
+
+      </div>
+    </div>
+  )
+
 }

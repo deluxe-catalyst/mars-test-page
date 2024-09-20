@@ -1,9 +1,52 @@
 @import '../../variables.scss';
 
+.btn{
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+
+}
+
+.btn__indicator{
+    margin-top: 20px;
+    min-width: 0px;
+    min-height: 0px;
+    cursor: default;
+    width: 100%;
+    transform: translateX(2px);
+}
+
 .hollow-button{
-    width: fit-content;
+    position: relative;
+    cursor: pointer;
+    height: fit-content;
     font-family: 'Museo';
+    font-weight: 300;
     border-radius: 0;
-    padding: 10px 20px;
+    padding: 12px 28px;
     font-size: $font-size-s;
+    color: white;
+    background-color: $bg-black-transparent;
+    border: none;
+    border: 1px solid rgb(104, 104, 104);
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+.left-bottom-angle, .right-top-angle{
+    position: absolute;
+    display: block;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.left-bottom-angle{
+    bottom: -11px;
+    left: -11px;
+}
+
+.right-top-angle{
+    top: -11px;
+    right: -11px;
+    rotate: (180deg);
 }
