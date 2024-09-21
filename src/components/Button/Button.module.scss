@@ -43,6 +43,11 @@
     border: 1px solid rgb(104, 104, 104);
     white-space: nowrap;
     box-sizing: border-box;
+
+    &:hover{
+        background-color: rgba(255, 255, 255, 0.1);
+
+    }
 }
 
 .left-bottom-angle, .right-top-angle{
@@ -76,56 +81,47 @@
     display: none;
     position: relative;
     padding: 0;
+
+    &:hover{
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    &::after, &::before{
+        content: '';
+        display: block;
+        width: 34px;
+        height: 2px; 
+        background-color: white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: transform 0.3s ease, opacity 0.3s ease; // Плавный переход для анимации
+    }
 }
 
-.header__button--burger::after, .header__button--close::after{
-    transition: .2s;
-    top: 40%;
-    position: absolute;
-    display: block;
-    content: '';
-    width: 40px;
-    height: 3px;
-    background-color: white;
+
+
+
+.header__button--burger{
+    &::before{
+        top: 41%;
+    }
+    &::after{
+        top: 60%;
+
+    }
 }
 
-.header__button--burger::before,
-.header__button--burger::after,
-.header__button--close::before,
-.header__button--close::after {
-    content: '';
-    display: block;
-    width: 34px; // Ширина полоски
-    height: 2px; // Высота полоски
-    background-color: white;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: transform 0.3s ease, opacity 0.3s ease; // Плавный переход для анимации
-}
-
-.header__button--burger::before {
-    top: 41%;
-}
-
-.header__button--burger::after {
-    top: 60%;
-}
-
-.header__button--close::before {
-    top: 41%; // Нижняя полоска
-    transform: rotate(45deg) translate(-8px, 16px);
-}
-
-.header__button--close::after {
-    top: 60%; // Верхняя полоска
-
-    transform: rotate(-45deg) translate(-8px, -16px);
-}
-
-.header__button--burger:hover, .header__button--close:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+.header__button--close {
+    &::before{
+        top: 41%; // Нижняя полоска
+        transform: rotate(45deg) translate(-8px, 16px);
+    }
+    &::after{
+        top: 60%; // Верхняя полоска
+        transform: rotate(-45deg) translate(-8px, -16px);
+    }
 }
 
 @media (max-width: 991px){

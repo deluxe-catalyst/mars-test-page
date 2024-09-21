@@ -8,34 +8,41 @@
     background-image: url('../../assets//images/background.png');
     background-position: center;
     background-size: cover;
-    width: 100vw;
-    height: 100vh;
+    width: 120%;
+    height: 120%;
+    top: -10%;
+    left: -10%;
     box-sizing: border-box;
     background-repeat: no-repeat;
+    pointer-events: none
 }
 
 .container__parallax-planet{
     @extend .container__parallax-sky;
     background-image: url('../../assets//images/planet.png');
+    z-index: 10;
 }
 
 .container__rocket-image{
     @extend .container__parallax-sky;
     background-image: url('../../assets//images/rocket.png');
+    z-index: 20;
 }
 
 // ------------- Парллакс (END) --------------
 
 .container{
+    overflow: hidden;
     background-position: center;
     background-size: cover;
     height: 100vh;
-    // padding-top: $header-height;
-    width: 100%;
+    width: 100vw;
     position: relative;
 }
 
 .container__section{
+    box-sizing: border-box;
+    padding-top: $header-height;
     max-width: $max-container-width;
     width: $main-container-width;
     margin: 0 auto;
@@ -52,7 +59,8 @@
     grid-column: 1 / 5;
     width: fit-content;
     display: flex;
-    grid-row: 3/4;
+    grid-row: 1/4;
+    padding-top: 6vw;
     box-sizing: border-box;
     max-width: 1200px;
     width: 100%;
@@ -81,6 +89,7 @@
 }
 
 .section__button{
+    z-index: 30;
     max-width: 1200px;
     justify-self: end;
     align-self: end;
@@ -88,10 +97,12 @@
     grid-column: 1 / 5; 
     grid-row: 5/6;
     height: fit-content;
+    padding-top: clamp(60px, 8vw, 100px);
 }
 
 @media (max-width: 991px) {
     .section__wrapper{
+        z-index: 30;
         grid-column: 1/9;
         grid-row: 1/2;
         place-self: end;
@@ -114,6 +125,7 @@
 // ------------- Плитки (START) -------------
 
 .section__tiles{
+    z-index: 30;
     justify-self: start;
     grid-row: 3/7;
     grid-column: 6 / 9;
@@ -130,8 +142,38 @@
     gap: 6px;
 }
 
-.tiles__item{
-    background-color: $bg-white-transparent;
+.tiles__wrapper{
+    padding: 1px;
+    position: relative;
+    overflow: hidden;
+    transition: .1s;
+    
+    &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        background: radial-gradient(
+          300px
+          circle at var(--x) var(--y), 
+          rgba(255, 255, 255), 
+          transparent 50%
+        );
+        filter: blur(40px);
+        z-index: 1;
+
+      }
+    background-color: rgba(255,255,255,0.05);
+}
+
+
+.tiles__item {
+    cursor: pointer;
+    transition: .4s;
     width: 0px;
     height: 0px;
     padding: clamp(60px, 8vw, 80px);
@@ -139,20 +181,33 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
+    position: relative;
+    overflow: hidden;
+    z-index: 5;
+
+    &:hover{
+        background-color: rgba(0, 0, 0, 0.15);
+    }
+  }
+
 .item__text-1{
     margin-bottom: 18px;
     font-weight: 100;
+    z-index: 10;
 }
 .item__text-2{
     font-size: calc($font-size-xl - 10px);
+    z-index: 10;
+
+    .text-2__span{
+        font-size: calc($font-size-xl - 40px);
+
+    }
 }
 .item__text-3{
     font-weight: 100;
-}
+    z-index: 10;
 
-.text-2__span{
-    font-size: calc($font-size-xl - 40px);
 }
 
 @media (max-width: 991px){
