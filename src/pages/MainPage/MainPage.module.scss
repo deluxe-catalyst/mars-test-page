@@ -1,13 +1,38 @@
 @import '../../variables.scss';
 
-.container{
+
+// ------------- Парллакс (START) ------------
+
+.container__parallax-sky{
+    position: absolute;
     background-image: url('../../assets//images/background.png');
     background-position: center;
     background-size: cover;
+    width: 100vw;
     height: 100vh;
-    padding-top: $header-height;
-    width: 100%;
     box-sizing: border-box;
+    background-repeat: no-repeat;
+}
+
+.container__parallax-planet{
+    @extend .container__parallax-sky;
+    background-image: url('../../assets//images/planet.png');
+}
+
+.container__rocket-image{
+    @extend .container__parallax-sky;
+    background-image: url('../../assets//images/rocket.png');
+}
+
+// ------------- Парллакс (END) --------------
+
+.container{
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    // padding-top: $header-height;
+    width: 100%;
+    position: relative;
 }
 
 .container__section{
@@ -21,21 +46,22 @@
     grid-template-rows: repeat(8, 1fr);
 }
 
+// ---------- Контент слева (START) ----------
+
 .section__wrapper{
     grid-column: 1 / 5;
-    width: 100%;
+    width: fit-content;
     display: flex;
-    flex-direction: column;
     grid-row: 3/4;
+    box-sizing: border-box;
+    max-width: 1200px;
+    width: 100%;
+    justify-self: end;
 }
 
-.section__button{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    grid-column: 1 / 5; 
-    grid-row: 5/7;
-    top: 0;
+.section__text{
+    display: flex;
+    flex-direction: column;
 }
 
 .text__title{
@@ -47,17 +73,48 @@
 }
 
 .text__description{
-    
-    text-transform: uppercase;
+    text-transform: lowercase;
     background: linear-gradient(90deg, rgba(255,255,255,1) 0%, #FF9776 40%);
     background-clip: text;
     -webkit-background-clip: text; 
     -webkit-text-fill-color: transparent; 
 }
 
+.section__button{
+    max-width: 1200px;
+    justify-self: end;
+    align-self: end;
+    width: 100%;
+    grid-column: 1 / 5; 
+    grid-row: 5/6;
+    height: fit-content;
+}
+
+@media (max-width: 991px) {
+    .section__wrapper{
+        grid-column: 1/9;
+        grid-row: 1/2;
+        place-self: end;
+        justify-content: center;
+    }
+    .section__text{
+        align-items: center;
+    }
+
+    .section__button{
+        grid-column: 1/9;
+        grid-row: 7/8;
+    }
+}
+
+
+// ------------- Контент слева (END) -----------
+
+
 // ------------- Плитки (START) -------------
 
 .section__tiles{
+    justify-self: start;
     grid-row: 3/7;
     grid-column: 6 / 9;
     display: flex;
@@ -68,7 +125,7 @@
 }
 
 .tiles__row{
-    justify-content: right;
+    justify-content: center;
     display: flex;
     gap: 6px;
 }
@@ -77,25 +134,29 @@
     background-color: $bg-white-transparent;
     width: 0px;
     height: 0px;
-    padding: clamp(20px, 8vw, 80px);
+    padding: clamp(60px, 8vw, 80px);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 .item__text-1{
-    margin-bottom: clamp(10px, 2vw, 30px);
+    margin-bottom: 18px;
     font-weight: 100;
 }
-
+.item__text-2{
+    font-size: calc($font-size-xl - 10px);
+}
 .item__text-3{
     font-weight: 100;
 }
 
-.item__text-2{
-    font-size: calc($font-size-xl - 12px);
-}
-
 .text-2__span{
     font-size: calc($font-size-xl - 40px);
+}
+
+@media (max-width: 991px){
+    .section__tiles{
+        grid-column: 2/8;
+    }
 }

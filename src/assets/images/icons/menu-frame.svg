@@ -1,0 +1,19 @@
+<svg width="89" height="89" viewBox="0 0 89 89" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.5" y="0.5" width="88" height="88" stroke="white" stroke-opacity="0.2"/>
+<mask id="path-3-inside-1_315_45" fill="white">
+<path d="M0 0H10V10H0V0Z"/>
+</mask>
+<path d="M0 0V-1H-1V0H0ZM0 1H10V-1H0V1ZM1 10V0H-1V10H1Z" fill="white" mask="url(#path-3-inside-1_315_45)"/>
+<mask id="path-5-inside-2_315_45" fill="white">
+<path d="M89 0L89 10L79 10L79 -4.37114e-07L89 0Z"/>
+</mask>
+<path d="M89 0L90 4.37114e-08L90 -1L89 -1L89 0ZM88 -4.37114e-08L88 10L90 10L90 4.37114e-08L88 -4.37114e-08ZM79 1L89 1L89 -1L79 -1L79 1Z" fill="white" mask="url(#path-5-inside-2_315_45)"/>
+<mask id="path-7-inside-3_315_45" fill="white">
+<path d="M89 89L79 89L79 79L89 79L89 89Z"/>
+</mask>
+<path d="M89 89L89 90L90 90L90 89L89 89ZM89 88L79 88L79 90L89 90L89 88ZM88 79L88 89L90 89L90 79L88 79Z" fill="white" mask="url(#path-7-inside-3_315_45)"/>
+<mask id="path-9-inside-4_315_45" fill="white">
+<path d="M0 89L-4.37114e-07 79L10 79L10 89L0 89Z"/>
+</mask>
+<path d="M0 89L-1 89L-1 90L4.37114e-08 90L0 89ZM1 89L1 79L-1 79L-1 89L1 89ZM10 88L-4.37114e-08 88L4.37114e-08 90L10 90L10 88Z" fill="white" mask="url(#path-9-inside-4_315_45)"/>
+</svg>
