@@ -9,8 +9,8 @@ export default function useMouseMove(callback: (x: number, y: number) => void) {
             if(window.innerWidth <= 991) {
                 const { beta, gamma } = event;
                 if (beta !== null && gamma !== null) {
-                    const x = gamma / 10;  
-                    const y = beta / 10;
+                    const x = gamma / 180;  
+                    const y = beta / 180;
                     callback(x, y);
                 }
             }
