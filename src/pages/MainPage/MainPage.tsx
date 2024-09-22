@@ -3,27 +3,16 @@ import { button, tiles, titles } from '../../content/MainPageContent';
 import classes from './MainPage.module.scss';
 import btnIndicator from '../../assets/images/icons/btn-indicator.svg'
 import { useEffect, useState } from 'react';
+import useMouseMove from '../../hooks/useMouseMove';
+
+
 
 
 export default function MainPage() {
 
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-  useEffect(() => {
-    const handleMouseMove = (event: MouseEvent) => {
-      const { clientX, clientY } = event;
-      const x = (clientX / window.innerWidth) - 0.5;
-      const y = (clientY / window.innerHeight) - 0.5;
-
-      setMousePosition({ x, y });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
+  useMouseMove((x, y) => {setMousePosition({x, y})})
 
   const btnStyle = {
     transform: `translate(${mousePosition.x * 40}px, ${mousePosition.y * 40}px)`,
@@ -126,21 +115,7 @@ const ParallaxContainer = () => {
     rocket: 40,
   }
 
-  useEffect(() => {
-    const handleMouseMove = (event: MouseEvent) => {
-      const { clientX, clientY } = event;
-      const x = (clientX / window.innerWidth) - 0.5;
-      const y = (clientY / window.innerHeight) - 0.5;
-
-      setMousePosition({ x, y });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
+  useMouseMove((x, y) => {setMousePosition({x, y})})
 
   const skyStyle = {
     transform: `translate(${mousePosition.x * offset.sky}px, ${mousePosition.y * offset.sky}px)`,
