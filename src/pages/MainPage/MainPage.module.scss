@@ -194,7 +194,7 @@
     transition: .4s;
     width: 0px;
     height: 0px;
-    padding: clamp(60px, 8vw, 80px);
+    padding: clamp(70px, 8vw, 80px);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -212,24 +212,27 @@
     margin-bottom: 18px;
     font-weight: 100;
     z-index: 10;
+    font-size: $font-size-s;
 }
 .item__text-2{
-    font-size: calc($font-size-xl - 10px);
+    font-size: calc($font-size-xl);
     z-index: 10;
 
     .text-2__span{
-        font-size: calc($font-size-xl - 40px);
+        font-size: calc($font-size-s);
     }
 }
 .item__text-3{
     font-weight: 100;
     z-index: 10;
+    font-size: $font-size-s;
 
 }
 
 @media (max-width: 991px){
     .section__tiles{
-        grid-column: 2/8;
+        grid-column: 1/9;
+        grid-row: 3/6;
     }
 }
 
