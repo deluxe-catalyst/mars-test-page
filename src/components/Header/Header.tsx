@@ -7,7 +7,7 @@ import Button from '../Button/Button';
 
 export default function Header() {
 
-    const [navShow, setNavShow] = useState(true);
+    const [navShow, setNavShow] = useState(false);
 
     function toggleNav() {
         setNavShow(navShow === true ? false : true);
