@@ -2,17 +2,18 @@
 
 // --------------- Настройка хедера (START) --------------
 
-.header{
+.header {
     background-color: $bg-black-transparent;
     width: 100%;
     height: $header-height;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom-style: solid;
     position: fixed;
     z-index: 100;
     box-sizing: border-box;
 }
 
-.header__container{
+.header__container {
     box-sizing: border-box;
     max-width: $max-container-width;
     width: $main-container-width;
@@ -26,8 +27,8 @@
 
 
 
-@media (max-width: 991px){
-    .header__container{
+@media (max-width: 991px) {
+    .header__container {
         width: 100%;
         padding: 10px;
     }
@@ -37,15 +38,7 @@
 
 // --------------- Меню Хедера (START) --------------
 
-@keyframes fadeInUp {
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
-
-  }
-
-.nav__list--show{
+.nav__list--show {
     list-style: none;
     padding: 0;
     display: flex;
@@ -57,77 +50,8 @@
     max-width: 800px;
 }
 
-.nav__item--show{
-    text-decoration: none;
-    color: white;
-    transform:none;
-    transition: 0.5s cubic-bezier(0.015, 0.810, 0.355, 1);
-}
-
-.nav__link{
-    transition: .2s;
-    position: relative;
-
-    &:hover{
-        color: rgb(162, 162, 162);
-
-    }
-
-    &::after{
-        position: absolute;
-        content: '';
-        width: 0;
-        height: 1px;
-        left: 0;
-        bottom: -3px;
-        background-color:rgb(162, 162, 162);
-        transition: .2s cubic-bezier(0.075, 0.82, 0.165, 1);
-    }
-
-    &:hover::after{
-        width: 100%;
-    }
-}
-
-.nav__item--hide{
-    transition: .15s;
-    transition-delay: 0s;
-    filter: blur(6px);
-    @extend .nav__item--show;
-    transform: translateY(-80px) scaleY(1.1);
-    filter: blur(2px);
-    opacity: 0;
-}
-
-
-@for $i from 1 through 8 {
-    .nav__item--show:nth-child(#{$i}) {
-      transition-delay: $i * .05s;
-    }
-  }
-
-  @for $i from 1 through 8 {
-    .nav__item--hide:nth-child(#{$i}) {
-      transition-delay: $i * 0s;
-    }
-  }
-
-
-.header__logo{
-    display: block;
-    height: 100%;
-    z-index: 100;
-}
-
-.header__btn{
-    height: 100%;
-    z-index: 100;
-}
-
-
-
-@media (max-width: 991px){
-    .nav__list--show{
+@media (max-width: 991px) {
+    .nav__list--show {
         position: absolute;
         top: 0;
         left: 0;
@@ -149,14 +73,79 @@
         margin: 0;
         font-size: $font-size-xl;
     }
-
-
 }
 
-.nav__list--hide{
+.nav__list--hide {
     @extend .nav__list--show;
     height: 0;
     filter: blur(10px);
+}
+
+.nav__item--show {
+    text-decoration: none;
+    color: white;
+    transform: none;
+    transition: 0.5s cubic-bezier(0.015, 0.810, 0.355, 1);
+}
+
+.nav__item--hide {
+    transition: .15s;
+    transition-delay: 0s;
+    filter: blur(6px);
+    @extend .nav__item--show;
+    transform: translateY(-80px) scaleY(1.1);
+    filter: blur(2px);
+    opacity: 0;
+}
+
+@for $i from 1 through 8 {
+    .nav__item--show:nth-child(#{$i}) {
+        transition-delay: $i * .05s;
+    }
+}
+
+@for $i from 1 through 8 {
+    .nav__item--hide:nth-child(#{$i}) {
+        transition-delay: $i * 0s;
+    }
+}
+
+.nav__link {
+    transition: .2s;
+    position: relative;
+    white-space: nowrap;
+    font-weight: 100;
+
+    &:hover {
+        color: rgb(162, 162, 162);
+
+    }
+
+    &::after {
+        position: absolute;
+        content: '';
+        width: 0;
+        height: 1px;
+        left: 0;
+        bottom: -3px;
+        background-color: rgb(162, 162, 162);
+        transition: .2s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+
+    &:hover::after {
+        width: 100%;
+    }
+}
+
+.header__logo {
+    display: block;
+    height: 100%;
+    z-index: 100;
+}
+
+.header__btn {
+    height: 100%;
+    z-index: 100;
 }
 
 // --------------- Меню Хедера (END) --------------

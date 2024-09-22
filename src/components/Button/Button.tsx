@@ -21,11 +21,11 @@ export default function Button(props: Props) {
     return (
         <div className={classes['btn']}>
             <button className={classes[props.className]} onClick={props.onClick}>
-                {props.className === 'hollow-button' && <img className={classes['left-bottom-angle']} src={angle}/>}
-                {props.className === 'hollow-button' && <img className={classes['right-top-angle']} src={angle}/>}
+                {props.className === 'hollow-button' && <img className={classes['left-bottom-angle']} src={angle} alt='угол'/>}
+                {props.className === 'hollow-button' && <img className={classes['right-top-angle']} src={angle} alt='угол'/>}
                 {props.children}
             </button>
-            {props.subImage && <img className={classes['btn__indicator']} src={props.subImage}/>}
+            {props.subImage && <img className={classes['btn__indicator']} src={props.subImage} alt='угол'/>}
             
         </div>
     )
