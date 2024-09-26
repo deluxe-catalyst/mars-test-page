@@ -160,6 +160,7 @@
 }
 
 .tiles__wrapper{
+    @extend .bg-blur;
     padding: 1px;
     position: relative;
     overflow: hidden;
@@ -215,7 +216,7 @@
     font-size: $font-size-s;
 }
 .item__text-2{
-    font-size: calc($font-size-xl);
+    font-size: calc($font-size-xl - 6px);
     z-index: 10;
 
     .text-2__span{
